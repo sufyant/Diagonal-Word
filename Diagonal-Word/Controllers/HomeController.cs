@@ -23,9 +23,12 @@ namespace Diagonal_Word.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpPost] 
+        public ActionResult TableView(string txtEntry)
         {
-            return View();
+            object enrtry = txtEntry;
+
+            return View("TableView", enrtry);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

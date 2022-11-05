@@ -5,4 +5,34 @@
     Layout = "_Layout";
 }
 
-<h2>title</h2>
+<table style="border: groove;">
+    <tr>
+        @for (int i = 0; i < Model.Length; i++)
+        {
+            <th></th>
+        }
+    </tr>
+
+    @for (int i = 0; i < Model.Length; i++)
+    {
+        <tr>
+            @for (int k = 0; k < i; k++)
+            {
+                <td></td>
+            }
+            <td>@Model[i]</td>
+        </tr>
+    }
+    
+    @for (int i = Model.Length; i > 0; i--)
+    {
+        <tr>
+            @for (int k = 0; k < i-1; k++)
+            {
+                <td></td>
+            }
+            <td>@Model[Model.Length - i]</td>
+        </tr>
+    }
+</table>
+<a style="" href="/Home">Back</a>
